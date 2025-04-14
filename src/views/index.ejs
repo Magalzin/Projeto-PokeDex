@@ -1,45 +1,21 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PokeDex Unicesumar</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    body {
-      background-color: #f8f9fa;
-    }
-    .pokemon-card {
-      transition: transform 0.2s;
-    }
-    .pokemon-card:hover {
-      transform: scale(1.05);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeDex</title>
 </head>
 <body>
-  <div class="container py-5">
-    <h1 class="text-center mb-4">PokeDex Unicesumar</h1>
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
-      <% results.forEach(pokemon => { %>
-        <div class="col">
-          <div class="card pokemon-card h-100 text-center shadow-sm">
-            <img src="<%= pokemon.sprites.front_default %>" class="card-img-top mx-auto mt-3" alt="<%= pokemon.name %>" style="width: 96px; height: 96px;">
-            <div class="card-body">
-              <h5 class="card-title text-capitalize">
-                <a href="/pokemon/<%= pokemon.name %>" class="text-decoration-none text-dark">
-                  <%= pokemon.name %>
-                </a>
-              </h5>
-            </div>
-          </div>
-        </div>
-      <% }) %>
-    </div>
-  </div>
+    <h1>
+        PokeDex Unicesumar
+    </h1>
 
-  <!-- Bootstrap JS Bundle (opcional, para componentes interativos) -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <% results.forEach(pokemon => { %>
+        <div>
+            Nome: 
+            <a href="/pokemon/<%= pokemon.name %>"><%= pokemon.name %></a>
+            <p>-------------------------------------------------------------</p>
+        </div>
+    <% }) %>
 </body>
 </html>
